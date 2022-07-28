@@ -1,5 +1,8 @@
 import org.junit.Test;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 import static org.junit.Assert.*;
 
 public class ScoresTests {
@@ -124,6 +127,17 @@ public class ScoresTests {
         assertEquals(18, Scores.six(throwDices1));
         assertEquals(6, Scores.six(throwDices2));
         assertEquals(0, Scores.six(throwDices3));
+    }
+
+    @Test
+    public void fullHouseTest(){
+        ThrowDices throwDices1 = new ThrowDices(6,3,3,6,6);
+        ThrowDices throwDices2 = new ThrowDices(1,1,3,6,5);
+        ThrowDices throwDices3 = new ThrowDices(5,5,5,5,5);
+
+        assertEquals(24, Scores.fullHouse(throwDices1));
+        assertEquals(0, Scores.fullHouse(throwDices2));
+        assertEquals(0, Scores.fullHouse(throwDices3));
     }
 
 

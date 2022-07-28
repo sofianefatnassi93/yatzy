@@ -48,8 +48,8 @@ public class Scores {
         return throwDice.findDiceThreeofKind(2).isEmpty() ? 0: throwDice.findDiceThreeofKind(2).get(0) * 3;
     }
 
-    public static int fullHouse(){
-        return 0;
+    public static int fullHouse(ThrowDices throwDice){
+        return throwDice.findDiceFullHouse();
     }
 
     public static int smallStraight(){

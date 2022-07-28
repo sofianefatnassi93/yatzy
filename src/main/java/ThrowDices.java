@@ -1,7 +1,5 @@
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class ThrowDices {
 
@@ -50,7 +48,20 @@ public class ThrowDices {
                 .collect(Collectors.toSet());
     }
 
+    public static <T> boolean findDuplicateInListFrequency2(List<T> list) {
+        List<T> uniq = new ArrayList<T>(new TreeSet<T>(list));
+        boolean result = false;
+        if(uniq.size() == 2) {
+            result =
+                    Collections.frequency(list, uniq.get(0)) >= 2
+                            && (Collections.frequency(list, uniq.get(1)) >= 2);
+        }
+        return result;
+    }
 
+    public int findDiceFullHouse() {
+         return findDuplicateInListFrequency2(throwResult) ? sumDices() : 0;
+    }
 
 
 }
