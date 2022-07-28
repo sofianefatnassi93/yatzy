@@ -52,12 +52,12 @@ public class Scores {
         return throwDice.findDiceFullHouse();
     }
 
-    public static int smallStraight(){
-        return 0;
+    public static int smallStraight(ThrowDices throwDice){
+        return throwDice.isSmallStraight()? 15 : 0;
     }
 
-    public static int largeStraight(){
-        return 0;
+    public static int largeStraight(ThrowDices throwDice){
+        return throwDice.isLargeStraight()? 20 : 0;
     }
 
 

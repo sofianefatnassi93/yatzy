@@ -4,6 +4,8 @@ import java.util.stream.Collectors;
 public class ThrowDices {
 
     private final List<Integer> throwResult;
+    public final List<Integer> SMALL_STRAIGHT = Arrays.asList(1,2,3,4,5);
+    public final List<Integer> LARGE_STARIGHT = Arrays.asList(2,3,4,5,6);
 
     public ThrowDices(int dice1, int dice2, int dice3, int dice4, int dice5) {
         throwResult = Arrays.asList(dice1, dice2, dice3, dice4, dice5);
@@ -48,7 +50,7 @@ public class ThrowDices {
                 .collect(Collectors.toSet());
     }
 
-    public static <T> boolean findDuplicateInListFrequency2(List<T> list) {
+    public static <T> boolean isFullHouse(List<T> list) {
         List<T> uniq = new ArrayList<T>(new TreeSet<T>(list));
         boolean result = false;
         if(uniq.size() == 2) {
@@ -60,7 +62,15 @@ public class ThrowDices {
     }
 
     public int findDiceFullHouse() {
-         return findDuplicateInListFrequency2(throwResult) ? sumDices() : 0;
+         return isFullHouse(throwResult) ? sumDices() : 0;
+    }
+
+    public boolean isSmallStraight(){
+        return throwResult.stream().sorted().collect(Collectors.toList()).equals(SMALL_STRAIGHT);
+    }
+
+    public boolean isLargeStraight(){
+        return throwResult.stream().sorted().collect(Collectors.toList()).equals(LARGE_STARIGHT);
     }
 
 
