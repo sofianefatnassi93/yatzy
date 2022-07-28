@@ -1,6 +1,9 @@
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
+
 
 public class ScoresTests {
 
@@ -43,10 +46,10 @@ public class ScoresTests {
         ThrowDices throwDices3 = new ThrowDices(2,4,3,2,3);
         ThrowDices throwDices4 = new ThrowDices(2,5,3,5,3);
 
-        assertEquals(0, Scores.twoPair(throwDices1));
-        assertEquals(0, Scores.twoPair(throwDices2));
-        assertEquals(10, Scores.twoPair(throwDices3));
-        assertEquals(16, Scores.twoPair(throwDices4));
+        assertEquals(0, Scores.twoPairs(throwDices1));
+        assertEquals(0, Scores.twoPairs(throwDices2));
+        assertEquals(10, Scores.twoPairs(throwDices3));
+        assertEquals(16, Scores.twoPairs(throwDices4));
     }
 
     @Test
@@ -77,9 +80,9 @@ public class ScoresTests {
         ThrowDices throwDices2 = new ThrowDices(1,1,2,1,5);
         ThrowDices throwDices3 = new ThrowDices(6,6,3,4,5);
 
-        assertEquals(4, Scores.two(throwDices1));
-        assertEquals(2, Scores.two(throwDices2));
-        assertEquals(0, Scores.two(throwDices3));
+        assertEquals(4, Scores.twos(throwDices1));
+        assertEquals(2, Scores.twos(throwDices2));
+        assertEquals(0, Scores.twos(throwDices3));
     }
 
     @Test
@@ -88,9 +91,9 @@ public class ScoresTests {
         ThrowDices throwDices2 = new ThrowDices(1,3,3,1,3);
         ThrowDices throwDices3 = new ThrowDices(2,2,1,4,5);
 
-        assertEquals(3, Scores.three(throwDices1));
-        assertEquals(9, Scores.three(throwDices2));
-        assertEquals(0, Scores.three(throwDices3));
+        assertEquals(3, Scores.threes(throwDices1));
+        assertEquals(9, Scores.threes(throwDices2));
+        assertEquals(0, Scores.threes(throwDices3));
     }
 
     @Test
@@ -99,9 +102,9 @@ public class ScoresTests {
         ThrowDices throwDices2 = new ThrowDices(1,4,3,4,5);
         ThrowDices throwDices3 = new ThrowDices(2,2,3,1,5);
 
-        assertEquals(4, Scores.four(throwDices1));
-        assertEquals(8, Scores.four(throwDices2));
-        assertEquals(0, Scores.four(throwDices3));
+        assertEquals(4, Scores.fours(throwDices1));
+        assertEquals(8, Scores.fours(throwDices2));
+        assertEquals(0, Scores.fours(throwDices3));
     }
 
     @Test
@@ -110,9 +113,9 @@ public class ScoresTests {
         ThrowDices throwDices2 = new ThrowDices(1,5,3,1,5);
         ThrowDices throwDices3 = new ThrowDices(2,2,3,4,6);
 
-        assertEquals(5, Scores.five(throwDices1));
-        assertEquals(10, Scores.five(throwDices2));
-        assertEquals(0, Scores.five(throwDices3));
+        assertEquals(5, Scores.fives(throwDices1));
+        assertEquals(10, Scores.fives(throwDices2));
+        assertEquals(0, Scores.fives(throwDices3));
     }
 
     @Test
@@ -121,9 +124,9 @@ public class ScoresTests {
         ThrowDices throwDices2 = new ThrowDices(1,1,3,6,5);
         ThrowDices throwDices3 = new ThrowDices(2,2,3,4,5);
 
-        assertEquals(18, Scores.six(throwDices1));
-        assertEquals(6, Scores.six(throwDices2));
-        assertEquals(0, Scores.six(throwDices3));
+        assertEquals(18, Scores.sixs(throwDices1));
+        assertEquals(6, Scores.sixs(throwDices2));
+        assertEquals(0, Scores.sixs(throwDices3));
     }
 
     @Test
