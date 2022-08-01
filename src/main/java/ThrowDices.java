@@ -5,7 +5,7 @@ public class ThrowDices {
 
     private final List<Integer> throwResult;
     public static final List<Integer> SMALL_STRAIGHT = Arrays.asList(1,2,3,4,5);
-    public static final List<Integer> LARGE_STARIGHT = Arrays.asList(2,3,4,5,6);
+    public static final List<Integer> LARGE_STRAIGHT = Arrays.asList(2,3,4,5,6);
 
     /**
      * @param dice1
@@ -119,7 +119,7 @@ public class ThrowDices {
      * @return true if the sorted list of dices is large straight
      */
     public boolean isLargeStraight(){
-        return throwResult.stream().sorted().collect(Collectors.toList()).equals(LARGE_STARIGHT);
+        return throwResult.stream().sorted().collect(Collectors.toList()).equals(LARGE_STRAIGHT);
     }
 
 
